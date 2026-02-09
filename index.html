@@ -1,117 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Francis — Software & AI Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daniel Francis — Backend & AI Engineer</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* subtle animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.7s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 
-<body class="bg-[#0a0f23] text-gray-200 font-sans">
+<body class="bg-slate-950 text-slate-200 transition-colors duration-300">
 
-  <!-- HERO -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-[#0f172a] to-[#1e293b]">
-    <h1 class="text-6xl font-bold text-white mb-4">Daniel Francis</h1>
-    <p class="text-xl text-indigo-300 mb-6">
-      Backend Engineer • AI & RAG Specialist
+<!-- ===================================================== -->
+<!-- STICKY NAVBAR -->
+<!-- ===================================================== -->
+
+<nav class="fixed top-0 w-full backdrop-blur bg-slate-950/70 border-b border-slate-800 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <span class="font-bold text-lg">Daniel Francis</span>
+
+    <div class="flex gap-6 items-center text-sm">
+      <a href="#about" class="hover:text-indigo-400">About</a>
+      <a href="#skills" class="hover:text-indigo-400">Skills</a>
+      <a href="#projects" class="hover:text-indigo-400">Projects</a>
+      <a href="#contact" class="hover:text-indigo-400">Contact</a>
+
+      <!-- Theme Toggle -->
+      <button id="themeToggle"
+        class="ml-4 px-3 py-1 rounded bg-slate-800 text-xs hover:bg-slate-700">
+        🌙
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-950 to-slate-900 pt-24 fade-up">
+  <h1 class="text-6xl font-bold mb-4">Daniel Francis</h1>
+  <p class="text-xl text-indigo-400 mb-6">
+    Backend Engineer • AI & RAG Specialist
+  </p>
+
+  <div class="flex gap-4">
+    <a href="mailto:danielparuchuri@gmail.com"
+      class="px-6 py-3 bg-indigo-500 text-black font-semibold rounded-lg hover:bg-indigo-400">
+      Contact Me
+    </a>
+
+    <a href="Daniel.pdf" download
+      class="px-6 py-3 border border-indigo-400 rounded-lg hover:bg-indigo-500 hover:text-black">
+      Resume
+    </a>
+  </div>
+</section>
+
+
+<!-- ===================================================== -->
+<!-- ABOUT -->
+<!-- ===================================================== -->
+
+<section id="about" class="py-20 max-w-4xl mx-auto px-6 fade-up">
+  <h2 class="text-3xl font-bold text-indigo-400 mb-6">About Me</h2>
+  <p class="text-lg leading-relaxed">
+    I’m a backend-focused software engineer who enjoys designing reliable systems that
+    solve real business problems at scale. My work spans API architecture, marketplace
+    integrations, and high-volume data pipelines, with a strong emphasis on performance,
+    maintainability, and clean system design.
+    
+    Recently, I’ve been building AI-augmented tools using Retrieval-Augmented Generation
+    (RAG), local LLMs, and vector search to turn raw operational data into actionable
+    insights. I care deeply about writing pragmatic solutions — not over-engineering —
+    and shipping software that delivers measurable impact.
+  </p>
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SKILLS -->
+<!-- ===================================================== -->
+
+<section id="skills" class="py-20 bg-slate-900 fade-up">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-indigo-400 text-center mb-10">Skills</h2>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="pill">Python</span>
+      <span class="pill">Laravel</span>
+      <span class="pill">Django</span>
+      <span class="pill">REST APIs</span>
+      <span class="pill">Microservices</span>
+      <span class="pill">PostgreSQL</span>
+      <span class="pill">Docker</span>
+      <span class="pill">AI / RAG</span>
+      <span class="pill">Ollama</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PROJECTS -->
+<!-- ===================================================== -->
+
+<section id="projects" class="py-20 max-w-6xl mx-auto px-6 fade-up">
+  <h2 class="text-3xl font-bold text-indigo-400 text-center mb-12">
+    Featured Projects
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <div class="card">
+     <h3>Marketplace Data Ingestion Platform</h3>
+    <p>
+      Designed and implemented a scalable multi-stage ETL architecture to ingest and process
+      large volumes of Amazon, Flipkart, and TikTok marketplace data. Built bronze → silver →
+      gold transformations for analytics readiness, enabling faster reporting and business insights.
+      Reduced manual reporting effort and improved data reliability across teams.
     </p>
-
-    <div class="flex gap-4">
-      <a href="mailto:danielparuchuri@gmail.com"
-         class="px-6 py-3 bg-indigo-500 text-black font-semibold rounded-lg hover:bg-indigo-400 transition">
-        Contact Me
-      </a>
-
-      <a href="Daniel.pdf" download
-         class="px-6 py-3 border border-indigo-400 text-indigo-300 rounded-lg hover:bg-indigo-500 hover:text-black transition">
-        Download Resume
-      </a>
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section class="py-16 px-6 max-w-4xl mx-auto">
-    <h2 class="text-3xl text-indigo-400 font-bold mb-4">About Me</h2>
-    <p class="text-lg text-gray-300">
-      I build scalable backend systems, marketplace data pipelines, and AI-augmented
-      applications. Strong experience with Laravel, Django, Python, and modern
-      RAG-based AI systems using Ollama and vector databases.
-    </p>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="bg-[#111827] py-14 px-6">
-    <h2 class="text-3xl text-indigo-400 font-bold mb-8 text-center">Skills</h2>
-
-    <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-      <span class="flex items-center gap-2 bg-[#1f2937] px-4 py-2 rounded-full text-sm">
-        <img src="https://cdn.simpleicons.org/python/white" class="w-4 h-4"> Python
-      </span>
-
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">Laravel</span>
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">Django</span>
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">REST APIs</span>
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">Microservices</span>
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">Docker</span>
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">PostgreSQL</span>
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">AI / RAG</span>
-      <span class="bg-[#1f2937] px-4 py-2 rounded-full text-sm">Ollama</span>
+    <div class="card">
+      <h3>AI-Powered RAG Chatbot (Ollama + Vector Search)</h3>
+      <p>
+        Built a private, locally hosted AI assistant using Retrieval-Augmented Generation,
+        embeddings, and vector databases. Enables context-aware Q&A on internal documents
+        and operational data while maintaining full data privacy. Reduced dependency on
+        manual queries and improved decision-making speed for stakeholders.
+      </p>
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section class="py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl text-indigo-400 font-bold mb-10 text-center">
-      Featured Projects
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold text-indigo-300 mb-2">
-          Marketplace ETL Pipeline
-        </h3>
-        <p class="text-gray-300">
-          Multi-stage ingestion pipelines for Amazon, Flipkart & TikTok data
-          (bronze → silver → gold).
-        </p>
-      </div>
-
-      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold text-indigo-300 mb-2">
-          AI RAG Chatbot
-        </h3>
-        <p class="text-gray-300">
-          Local Ollama-powered chatbot with vector search and secure document Q&A.
-        </p>
-      </div>
-
-      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold text-indigo-300 mb-2">
-          Sales Reconciliation Platform
-        </h3>
-        <p class="text-gray-300">
-          Automated VAT, commission, and exchange-rate reconciliation across systems.
-        </p>
-      </div>
-
-      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold text-indigo-300 mb-2">
-          Channel Paisa Backend
-        </h3>
-        <p class="text-gray-300">
-          Order, invoice, and centralized onboarding workflows for merchants.
-        </p>
-      </div>
+    <div class="card">
+      <h3>Sales & Financial Reconciliation System</h3>
+      <p>
+        Engineered an automated reconciliation platform to validate sales across multiple
+        marketplaces. Implemented VAT, commission, and currency conversion logic to ensure
+        financial accuracy. Eliminated manual spreadsheets and significantly reduced accounting errors.
+      </p>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="py-10 text-center text-gray-500">
-    © 2026 Daniel Francis •
-    <a href="https://github.com/DANIELFRANCIS777" class="text-indigo-400">GitHub</a> •
-    Hosted on GitHub Pages
-  </footer>
+    <div class="card">
+      <h3>Order & Invoice Management Backend</h3>
+      <p>
+        Designed core backend services and workflows for order processing, invoice generation,
+        and centralized user onboarding. Built secure REST APIs and validation layers to ensure
+        data integrity and seamless cross-system communication.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CONTACT -->
+<!-- ===================================================== -->
+
+<footer id="contact" class="py-14 text-center border-t border-slate-800 fade-up">
+  © 2026 Daniel Francis •
+  <a href="https://github.com/danielfrancis777" class="text-indigo-400">GitHub</a>
+</footer>
+
+
+<!-- ===================================================== -->
+<!-- STYLES -->
+<!-- ===================================================== -->
+
+<style>
+  .pill {
+    background:#1e293b;
+    padding:8px 16px;
+    border-radius:9999px;
+    font-size:14px;
+  }
+
+  .card {
+    background:#111827;
+    padding:24px;
+    border-radius:12px;
+    transition:0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow:0 8px 30px rgba(0,0,0,.4);
+  }
+</style>
+
+
+<!-- ===================================================== -->
+<!-- SCRIPTS -->
+<!-- ===================================================== -->
+
+<script>
+/* Fade-in animation on scroll */
+const items = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('show');
+  });
+}, { threshold: 0.2 });
+
+items.forEach(el => observer.observe(el));
+
+
+/* Dark/Light Toggle */
+const btn = document.getElementById('themeToggle');
+
+btn.onclick = () => {
+  document.body.classList.toggle('bg-white');
+  document.body.classList.toggle('text-slate-900');
+};
+</script>
 
 </body>
 </html>
